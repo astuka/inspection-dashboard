@@ -12,9 +12,7 @@ import {
   ResponsiveContainer,
   PieChart,
   Pie,
-  Cell,
-  BarChart,
-  Bar
+  Cell
 } from 'recharts';
 import { 
   ArrowLeft, 
@@ -25,7 +23,6 @@ import {
   TrendingUp,
   TrendingDown
 } from 'lucide-react';
-import CustomTooltip from './Tooltip';
 
 interface SystemDetailProps {
   system: InspectionSystem;
@@ -345,7 +342,7 @@ export default function SystemDetail({ system, historicalData, onBack }: SystemD
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, percentage }) => `${name} (${percentage}%)`}
+                    label={({ name, value }) => `${name} (${value})`}
                     outerRadius={120}
                     fill="#8884d8"
                     dataKey="value"

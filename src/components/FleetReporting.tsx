@@ -265,7 +265,7 @@ export default function FleetReporting({ systems, onBack }: FleetReportingProps)
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip 
-                    formatter={(value, name, props) => [`${value}%`, 'Uptime']}
+                    formatter={(value) => [`${value}%`, 'Uptime']}
                     labelFormatter={(label) => `System ${label}`}
                     contentStyle={{ 
                       backgroundColor: '#fff', 
@@ -292,7 +292,7 @@ export default function FleetReporting({ systems, onBack }: FleetReportingProps)
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ name, count }) => `${name}: ${count}`}
+                  label={({ name, value }) => `${name}: ${value}`}
                   outerRadius={80}
                   fill="#8884d8"
                   dataKey="count"
